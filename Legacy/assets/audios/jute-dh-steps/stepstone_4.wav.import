@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/stepstone_4.wav-7b63d51361e2f2f204cdc1b197b5e66e.sample"
+
+[deps]
+
+source_file="res://Legacy/assets/audios/jute-dh-steps/stepstone_4.wav"
+dest_files=[ "res://.import/stepstone_4.wav-7b63d51361e2f2f204cdc1b197b5e66e.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=true
+compress/mode=0

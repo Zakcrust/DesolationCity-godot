@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/hit04.mp3.ogg-e51b4cf4a71121e038f676c39be12dd9.oggstr"
+
+[deps]
+
+source_file="res://Legacy/assets/audios/hits/hit04.mp3.ogg"
+dest_files=[ "res://.import/hit04.mp3.ogg-e51b4cf4a71121e038f676c39be12dd9.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

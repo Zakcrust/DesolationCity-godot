@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Mysterious Ambient Background Music - The Rake.ogg-ad90d575e21977799ad02972709064b5.oggstr"
+
+[deps]
+
+source_file="res://Legacy/assets/audios/Mysterious Ambient Background Music - The Rake.ogg"
+dest_files=[ "res://.import/Mysterious Ambient Background Music - The Rake.ogg-ad90d575e21977799ad02972709064b5.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/electric_door_opening_2.wav-0c8fa376615f5dfdf5e5f371c6a30d07.sample"
+
+[deps]
+
+source_file="res://Legacy/assets/audios/electric_door_opening_2.wav"
+dest_files=[ "res://.import/electric_door_opening_2.wav-0c8fa376615f5dfdf5e5f371c6a30d07.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0
