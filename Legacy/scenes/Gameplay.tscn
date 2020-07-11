@@ -1,7 +1,7 @@
 [gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Legacy/assets/BG/bgeve.png" type="Texture" id=1]
-[ext_resource path="res://Scenes/Player/Bandit.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Player/HeroKnight.tscn" type="PackedScene" id=2]
 [ext_resource path="res://icon.png" type="Texture" id=3]
 [ext_resource path="res://Legacy/scenes/realMap.tres" type="TileSet" id=5]
 [ext_resource path="res://Legacy/assets/BG/testes.png" type="Texture" id=6]
@@ -367,9 +367,12 @@ z_index = -2
 texture = ExtResource( 42 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 116.379, 556.486 )
+position = Vector2( 118.66, 645.213 )
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
+position = Vector2( 58.1895, 278.243 )
+rotation = 3.14159
+scale = Vector2( 1, -1 )
 offset = Vector2( 0, 100 )
 current = true
 limit_left = 0

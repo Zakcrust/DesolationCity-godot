@@ -1,0 +1,183 @@
+[gd_scene load_steps=66 format=2]
+
+[ext_resource path="res://Assets/Player/HeroKnight/Sprites/HeroKnight/Attack1/HeroKnight_Attack1_0.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Player/HeroKnight/Sprites/HeroKnight/Attack1/HeroKnight_Attack1_5.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Player/HeroKnight/Sprites/HeroKnight/Idle/HeroKnight_Idle_6.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Player/HeroKnight/Sprites/HeroKnight/Idle/HeroKnight_Idle_0.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Player/HeroKnight/Sprites/HeroKnight/Run/HeroKnight_Run_0.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Player/HeroKnight/Sprites/HeroKnight/Run/HeroKnight_Run_2.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Player/HeroKnight/Sprites/HeroKnight/Run/HeroKnight_Run_8.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Player/HeroKnight/Sprites/HeroKnight/Run/HeroKnight_Run_9.png" type="Texture" id=8]
+[ext_resource path="res://Scripts/Player.gd" type="Script" id=9]
+[ext_resource path="res://Assets/Player/HeroKnight/Sprites/HeroKnight/Run/HeroKnight_Run_3.png" type="Texture" id=10]
+[ext_resource path="res://Assets/Player/HeroKnight/Sprites/HeroKnight/Run/HeroKnight_Run_1.png" type="Texture" id=11]
+[ext_resource path="res://Assets/Player/HeroKnight/Sprites/HeroKnight/Run/HeroKnight_Run_6.png" type="Texture" id=12]
+[ext_resource path="res://Assets/Player/HeroKnight/Sprites/HeroKnight/Run/HeroKnight_Run_4.png" type="Texture" id=13]
+[ext_resource path="res://Assets/Player/HeroKnight/Sprites/HeroKnight/Jump/HeroKnight_Jump_2.png" type="Texture" id=14]
+[ext_resource path="res://Shader/outline2D.tres" type="Material" id=15]
+[ext_resource path="res://Assets/Player/HeroKnight/Sprites/HeroKnight/Idle/HeroKnight_Idle_1.png" type="Texture" id=16]
+[ext_resource path="res://Assets/Player/HeroKnight/Sprites/HeroKnight/Idle/HeroKnight_Idle_4.png" type="Texture" id=17]
+[ext_resource path="res://Assets/Player/HeroKnight/Sprites/HeroKnight/Idle/HeroKnight_Idle_2.png" type="Texture" id=18]
+[ext_resource path="res://Assets/Player/HeroKnight/Sprites/HeroKnight/Idle/HeroKnight_Idle_7.png" type="Texture" id=19]
+[ext_resource path="res://Assets/Player/HeroKnight/Sprites/HeroKnight/Idle/HeroKnight_Idle_3.png" type="Texture" id=20]
+[ext_resource path="res://Assets/Player/HeroKnight/Sprites/HeroKnight/Idle/HeroKnight_Idle_5.png" type="Texture" id=21]
+[ext_resource path="res://Assets/Player/HeroKnight/Sprites/HeroKnight/Attack1/HeroKnight_Attack1_2.png" type="Texture" id=22]
+[ext_resource path="res://Assets/Player/HeroKnight/Sprites/HeroKnight/Attack1/HeroKnight_Attack1_4.png" type="Texture" id=23]
+[ext_resource path="res://Assets/Player/HeroKnight/Sprites/HeroKnight/Attack1/HeroKnight_Attack1_3.png" type="Texture" id=24]
+[ext_resource path="res://Assets/Player/HeroKnight/Sprites/HeroKnight/Attack1/HeroKnight_Attack1_1.png" type="Texture" id=25]
+[ext_resource path="res://Assets/Player/HeroKnight/Sprites/HeroKnight/Jump/HeroKnight_Jump_1.png" type="Texture" id=26]
+[ext_resource path="res://Assets/Player/HeroKnight/Sprites/HeroKnight/Jump/HeroKnight_Jump_0.png" type="Texture" id=27]
+[ext_resource path="res://Assets/Player/HeroKnight/Sprites/HeroKnight/Run/HeroKnight_Run_5.png" type="Texture" id=28]
+[ext_resource path="res://Assets/Player/HeroKnight/Sprites/HeroKnight/Run/HeroKnight_Run_7.png" type="Texture" id=29]
+[ext_resource path="res://Assets/Player/HeroKnight/Sprites/HeroKnight/Attack2/HeroKnight_Attack2_5.png" type="Texture" id=30]
+[ext_resource path="res://Assets/Player/HeroKnight/Sprites/HeroKnight/Attack2/HeroKnight_Attack2_3.png" type="Texture" id=31]
+[ext_resource path="res://Assets/Player/HeroKnight/Sprites/HeroKnight/Attack2/HeroKnight_Attack2_4.png" type="Texture" id=32]
+[ext_resource path="res://Assets/Player/HeroKnight/Sprites/HeroKnight/Attack2/HeroKnight_Attack2_1.png" type="Texture" id=33]
+[ext_resource path="res://Assets/Player/HeroKnight/Sprites/HeroKnight/Attack2/HeroKnight_Attack2_0.png" type="Texture" id=34]
+[ext_resource path="res://Assets/Player/HeroKnight/Sprites/HeroKnight/Attack2/HeroKnight_Attack2_2.png" type="Texture" id=35]
+[ext_resource path="res://Assets/Player/HeroKnight/Sprites/HeroKnight/Attack3/HeroKnight_Attack3_3.png" type="Texture" id=36]
+[ext_resource path="res://Assets/Player/HeroKnight/Sprites/HeroKnight/Attack3/HeroKnight_Attack3_6.png" type="Texture" id=37]
+[ext_resource path="res://Assets/Player/HeroKnight/Sprites/HeroKnight/Attack3/HeroKnight_Attack3_4.png" type="Texture" id=38]
+[ext_resource path="res://Assets/Player/HeroKnight/Sprites/HeroKnight/Attack3/HeroKnight_Attack3_5.png" type="Texture" id=39]
+[ext_resource path="res://Assets/Player/HeroKnight/Sprites/HeroKnight/Attack3/HeroKnight_Attack3_2.png" type="Texture" id=40]
+[ext_resource path="res://Assets/Player/HeroKnight/Sprites/HeroKnight/Attack3/HeroKnight_Attack3_1.png" type="Texture" id=41]
+[ext_resource path="res://Assets/Player/HeroKnight/Sprites/HeroKnight/Attack3/HeroKnight_Attack3_7.png" type="Texture" id=42]
+[ext_resource path="res://Assets/Player/HeroKnight/Sprites/HeroKnight/Attack3/HeroKnight_Attack3_0.png" type="Texture" id=43]
+[ext_resource path="res://Assets/Player/HeroKnight/Sprites/HeroKnight/Fall/HeroKnight_Fall_1.png" type="Texture" id=44]
+[ext_resource path="res://Assets/Player/HeroKnight/Sprites/HeroKnight/Fall/HeroKnight_Fall_0.png" type="Texture" id=45]
+[ext_resource path="res://Assets/Player/HeroKnight/Sprites/HeroKnight/Fall/HeroKnight_Fall_2.png" type="Texture" id=46]
+[ext_resource path="res://Assets/Player/HeroKnight/Sprites/HeroKnight/Fall/HeroKnight_Fall_3.png" type="Texture" id=47]
+[ext_resource path="res://Assets/Player/HeroKnight/Sprites/HeroKnight/Roll/HeroKnight_Roll_0.png" type="Texture" id=48]
+[ext_resource path="res://Assets/Player/HeroKnight/Sprites/HeroKnight/Roll/HeroKnight_Roll_5.png" type="Texture" id=49]
+[ext_resource path="res://Assets/Player/HeroKnight/Sprites/HeroKnight/Roll/HeroKnight_Roll_3.png" type="Texture" id=50]
+[ext_resource path="res://Assets/Player/HeroKnight/Sprites/HeroKnight/Roll/HeroKnight_Roll_6.png" type="Texture" id=51]
+[ext_resource path="res://Assets/Player/HeroKnight/Sprites/HeroKnight/Roll/HeroKnight_Roll_2.png" type="Texture" id=52]
+[ext_resource path="res://Assets/Player/HeroKnight/Sprites/HeroKnight/Roll/HeroKnight_Roll_7.png" type="Texture" id=53]
+[ext_resource path="res://Assets/Player/HeroKnight/Sprites/HeroKnight/Roll/HeroKnight_Roll_4.png" type="Texture" id=54]
+[ext_resource path="res://Assets/Player/HeroKnight/Sprites/HeroKnight/Roll/HeroKnight_Roll_1.png" type="Texture" id=55]
+[ext_resource path="res://Assets/Player/HeroKnight/Sprites/HeroKnight/Roll/HeroKnight_Roll_8.png" type="Texture" id=56]
+[ext_resource path="res://Fonts/markerfont.tres" type="DynamicFont" id=57]
+[ext_resource path="res://Assets/Player/HeroKnight/Sprites/HeroKnight/WallSlide/HeroKnight_Slide_2.png" type="Texture" id=58]
+[ext_resource path="res://Assets/Player/HeroKnight/Sprites/HeroKnight/WallSlide/HeroKnight_Slide_0.png" type="Texture" id=59]
+[ext_resource path="res://Assets/Player/HeroKnight/Sprites/HeroKnight/WallSlide/HeroKnight_Slide_4.png" type="Texture" id=60]
+[ext_resource path="res://Assets/Player/HeroKnight/Sprites/HeroKnight/WallSlide/HeroKnight_Slide_1.png" type="Texture" id=61]
+[ext_resource path="res://Assets/Player/HeroKnight/Sprites/HeroKnight/WallSlide/HeroKnight_Slide_3.png" type="Texture" id=62]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 4 ), ExtResource( 16 ), ExtResource( 18 ), ExtResource( 20 ), ExtResource( 17 ), ExtResource( 21 ), ExtResource( 3 ), ExtResource( 19 ) ],
+"loop": true,
+"name": "idle",
+"speed": 8.0
+}, {
+"frames": [ ExtResource( 48 ), ExtResource( 55 ), ExtResource( 52 ), ExtResource( 50 ), ExtResource( 54 ), ExtResource( 49 ), ExtResource( 51 ), ExtResource( 53 ), ExtResource( 56 ) ],
+"loop": false,
+"name": "roll",
+"speed": 15.0
+}, {
+"frames": [ ExtResource( 1 ), ExtResource( 25 ), ExtResource( 22 ), ExtResource( 24 ), ExtResource( 23 ), ExtResource( 2 ) ],
+"loop": true,
+"name": "attack",
+"speed": 18.0
+}, {
+"frames": [ ExtResource( 27 ), ExtResource( 26 ), ExtResource( 14 ) ],
+"loop": false,
+"name": "jump",
+"speed": 9.0
+}, {
+"frames": [ ExtResource( 5 ), ExtResource( 11 ), ExtResource( 6 ), ExtResource( 10 ), ExtResource( 13 ), ExtResource( 28 ), ExtResource( 12 ), ExtResource( 29 ), ExtResource( 7 ), ExtResource( 8 ) ],
+"loop": true,
+"name": "run",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 43 ), ExtResource( 41 ), ExtResource( 40 ), ExtResource( 36 ), ExtResource( 38 ), ExtResource( 39 ), ExtResource( 37 ), ExtResource( 42 ) ],
+"loop": true,
+"name": "attack_2",
+"speed": 18.0
+}, {
+"frames": [ ExtResource( 34 ), ExtResource( 33 ), ExtResource( 35 ), ExtResource( 31 ), ExtResource( 32 ), ExtResource( 30 ) ],
+"loop": true,
+"name": "attack_1",
+"speed": 18.0
+}, {
+"frames": [ ExtResource( 45 ), ExtResource( 44 ), ExtResource( 46 ), ExtResource( 47 ) ],
+"loop": false,
+"name": "fall",
+"speed": 6.0
+}, {
+"frames": [ ExtResource( 59 ), ExtResource( 61 ), ExtResource( 58 ), ExtResource( 62 ), ExtResource( 60 ) ],
+"loop": true,
+"name": "wall_slide",
+"speed": 10.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 8.875, 19.625 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 11.25, 21.5 )
+
+[node name="Player" type="KinematicBody2D"]
+scale = Vector2( 2, 2 )
+script = ExtResource( 9 )
+SPEED = 300.0
+
+[node name="AnimSprite" type="AnimatedSprite" parent="."]
+material = ExtResource( 15 )
+frames = SubResource( 1 )
+animation = "wall_slide"
+frame = 3
+playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -1.375, 7.375 )
+shape = SubResource( 2 )
+
+[node name="HurtBox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
+position = Vector2( -1.5, 6.5 )
+shape = SubResource( 3 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Panel" type="Panel" parent="CanvasLayer"]
+margin_right = 437.0
+margin_bottom = 203.0
+rect_scale = Vector2( 0.727601, 0.473631 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 10.0
+margin_top = 10.0
+custom_fonts/normal_font = ExtResource( 57 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "A,D to move
+W to jump
+Space to attack
+L-Shift to roll"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AttackTimer" type="Timer" parent="."]
+wait_time = 0.375
+one_shot = true
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+cast_to = Vector2( 50, 0 )
+
+[node name="JumpTimer" type="Timer" parent="."]
+wait_time = 0.3
+one_shot = true
+
+[node name="RollTimer" type="Timer" parent="."]
+wait_time = 0.6
+one_shot = true
+[connection signal="timeout" from="AttackTimer" to="." method="_on_AttackTimer_timeout"]
+[connection signal="timeout" from="JumpTimer" to="." method="_on_JumpTimer_timeout"]
+[connection signal="timeout" from="RollTimer" to="." method="_on_RollTimer_timeout"]
