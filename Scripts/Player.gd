@@ -4,14 +4,17 @@ extends KinematicBody2D
 export (float) var SPEED = 200
 export (float) var JUMP_SPEED = 600
 export (float) var GRAVITY = 19.6
-var WALL_SLIDE_MODIFIER : float = GRAVITY * 0.3
+var WALL_SLIDE_MODIFIER : float = GRAVITY * 0.9
 var ROLL_SPEED : float = 0
 var is_jumping : bool = false
+var is_blocking : bool = true
+var can_roll : bool = true
 
 var speed_direction : float = 0
 
 enum {
 	move,
+	block,
 	roll,
 	attack_1,
 	attack_2,
@@ -25,7 +28,7 @@ var velocity : Vector2
 
 func _process(delta):
 	_handle_input(delta)
-	
+	_debug()
 
 func _handle_input(_delta):
 	velocity.x = 0
@@ -74,31 +77,95 @@ func _handle_input(_delta):
 				$AnimSprite.play("jump")
 				velocity.y = -JUMP_SPEED
 			
-			if Input.is_action_pressed("roll"):
+			if Input.is_action_pressed("roll") and is_on_floor() and can_roll and velocity.x != 0:
 				ROLL_SPEED = speed_direction
 				$RollTimer.start()
+				$RollCooldown.start()
 				$AnimSprite.play("roll")
+				can_roll = false
 				state = roll
-				
+			
+			if Input.is_action_pressed("block"):
+				is_blocking = true
+				$AnimSprite.play("block")
+				state = block
+			
 			if velocity.x == 0 and is_on_floor():
 				$AnimSprite.play("idle")
 			
 			if not is_on_floor() and not is_jumping:
 				$AnimSprite.play("fall")
-				if is_on_wall():
-					slide_modifier = WALL_SLIDE_MODIFIER
-					$AnimSprite.play("wall_slide")
-				else:
-					slide_modifier = 0
-			
-			
+#				if is_on_wall():
+#					slide_modifier = WALL_SLIDE_MODIFIER
+#					$AnimSprite.play("wall_slide")
+#				else:
+#					slide_modifier = 0
 		roll:
 			velocity.x = ROLL_SPEED
 			
+		
+		block:
+			if Input.is_action_just_pressed("attack") and is_on_floor():
+					$AnimSprite.play("attack")
+					state = attack_1
+					$AttackTimer.start()
+					return
+				
+			if Input.is_action_just_pressed("move_left"):
+				$AnimSprite.flip_h = true
+				$RayCast2D.scale.x = -1
+			
+			if Input.is_action_just_pressed("move_right"):
+				$AnimSprite.flip_h = false
+				$RayCast2D.scale.x = 1
+			
+			if Input.is_action_pressed("block"):
+				is_blocking = true
+				$AnimSprite.play("block")
+				
+			if not is_on_floor() and not is_jumping:
+				$AnimSprite.play("fall")
+			
+			if Input.is_action_just_released("block"):
+				$AnimSprite.play("idle")
+				state = move
 			
 	
 	velocity.y += (GRAVITY - slide_modifier)
 	velocity = move_and_slide(velocity, Vector2.UP)
+
+
+
+func _debug() -> void:
+	var debug_text : String = ""
+	debug_text += "State : %s \n" % _get_debug_state(state)
+	debug_text += "Is Jumping : %s \n" % is_jumping
+	debug_text += "Is Blocking : %s \n" % is_blocking
+	debug_text += "Can roll : %s \n" % can_roll
+	$CanvasLayer/Debug/Text.text = debug_text
+	pass
+
+
+func _get_debug_state(state) -> String:
+	var result : String
+	match state:
+		move:
+			result = "move"
+		attack_1:
+			result = "attack_1"
+		attack_2:
+			result = "attack_2"
+		attack_3:
+			result = "attack_3"
+		roll:
+			result = "roll"
+		dead:
+			result = "dead"
+		block:
+			result = "block"
+			
+			
+	return result
 
 
 
@@ -112,3 +179,7 @@ func _on_JumpTimer_timeout():
 
 func _on_RollTimer_timeout():
 	state = move
+
+
+func _on_RollCooldown_timeout():
+	can_roll = true
