@@ -1,14 +1,18 @@
 extends KinematicBody2D
 
+class_name Player
+
 
 export (float) var SPEED = 200
 export (float) var JUMP_SPEED = 600
 export (float) var GRAVITY = 19.6
 var WALL_SLIDE_MODIFIER : float = GRAVITY * 0.9
 var ROLL_SPEED : float = 0
+
 var is_jumping : bool = false
 var is_blocking : bool = true
 var can_roll : bool = true
+var is_dead : bool = false
 
 var speed_direction : float = 0
 
@@ -33,6 +37,9 @@ func _process(delta):
 func _handle_input(_delta):
 	velocity.x = 0
 	var slide_modifier = 0
+	velocity.y += (GRAVITY - slide_modifier)
+	
+	
 	match state:
 		attack_1:
 			if Input.is_action_just_pressed("attack") and is_on_floor():
@@ -102,7 +109,6 @@ func _handle_input(_delta):
 #					slide_modifier = 0
 		roll:
 			velocity.x = ROLL_SPEED
-			
 		
 		block:
 			if Input.is_action_just_pressed("attack") and is_on_floor():
@@ -129,10 +135,26 @@ func _handle_input(_delta):
 			if Input.is_action_just_released("block"):
 				$AnimSprite.play("idle")
 				state = move
-			
-	
-	velocity.y += (GRAVITY - slide_modifier)
+				is_blocking = false
+				
+				
+		dead:
+			velocity.y = 0
+		
+		
 	velocity = move_and_slide(velocity, Vector2.UP)
+
+
+func dead() -> void:
+	state = dead
+	is_dead = true
+	$CollisionShape2D.disabled = true
+	$AnimSprite.play("dead")
+
+
+func is_dead() -> bool:
+	return is_dead
+
 
 
 
